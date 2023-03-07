@@ -9,7 +9,8 @@ let nyTimesUrl = "https://api.nytimes.com/svc/news/v3/content/all/all.json?api-k
 class NewsService {
   
   getNews() {
-    return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=601198fd68ee4cfe8fdaafd0b449492e')
+    // return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=601198fd68ee4cfe8fdaafd0b449492e')
+    return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=601198fd68ee4cfe8fdaafd0b449492e&pageSize=10')
     .then(response => response.json())
     .then(data => {
       const article = data.articles;
