@@ -3,6 +3,7 @@ import { Stack } from '@mui/system';
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import ButtonAppBar from '../Components/Header';
 import TypographyTheme from '../Components/TypoHeadBtn';
 import { getNewsUsingThunk } from '../Slices/news.slice'
 import formatDate from '../utils/formatDate';
@@ -20,6 +21,7 @@ const News = () => {
 
   return (
     <div className='min-w-[257px] flex flex-col items-center'>
+    <ButtonAppBar />
       <Typography variant="h3" sx={{ textAlign:'center' }}>
         Top News Of Today
       </Typography>;

@@ -14,7 +14,7 @@ function App() {
   // console.log(user, "App.js User, isLoggedIn");
 
   return (
-    <div className="p-4">
+    <div className="w-full">
       <Routes>
         <Route index element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />

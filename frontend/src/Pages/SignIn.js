@@ -145,7 +145,7 @@ const SignIn = () => {
                 <span className='text-red-600 text-xs'>{errors?.password ? errors?.password : ""}</span>
                 <FormControl fullWidth sx={{ mt: 2 }} style={{ maxWidth: '340px' }} variant="outlined">
                   <Button type='submit' sx={{ height: '50px', mt: '0px', display: 'flex', alignItems: 'center' }} disableElevation color='primary'
-                    disabled={errors?.email || errors?.password || inputValue?.email?.length===0 || inputValue?.password?.length===0 } 
+                    disabled={loader || errors?.email || errors?.password || inputValue?.email?.length===0 || inputValue?.password?.length===0 } 
                     variant="contained" onClick={onSubmit}>
                       Submit
                       {loader && <span className='ml-4 mt-2'><CircularProgress size="24" color="inherit" /></span>}

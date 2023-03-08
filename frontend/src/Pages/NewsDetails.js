@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getNewsUsingThunk } from '../Slices/news.slice';
 import formatDate from '../utils/formatDate';
 import { Stack } from "@mui/system";
+import ButtonAppBar from "../Components/Header";
 
 const NewsDetails = () => {
     const [summarizedtext, setsummarizedtext] = useState("");
@@ -37,7 +38,8 @@ const NewsDetails = () => {
           }, {
             headers: {
                 // "Example-Header": "example",
-                "User-Agent": "stagefright/1.2 (Linux;Android 5.0)"
+                "User-Agent": "stagefright/1.2 (Linux;Android 5.0)",
+                Authorization: 'Bearer '+process.env.REACT_APP_OPENAI_API_KEYs
             },
           })
           .then((res) => {
@@ -60,6 +62,7 @@ const NewsDetails = () => {
 
     return (
         <div>
+            <ButtonAppBar />
             <Card sx={{ mb: 2 }} variant="outlined">
                 <>
                     <CardActions>

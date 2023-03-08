@@ -33,13 +33,13 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const logoutUser = createAsyncThunk(
-  "auth/logoutUser",
-  async (data, thunkAPI) => {
-    const response = await auth.logout(data);
-    return response.data;
-  }
-);
+// export const logoutUser = createAsyncThunk(
+//   "auth/logoutUser",
+//   async (data, thunkAPI) => {
+//     const response = await auth.logout(data);
+//     return response.data;
+//   }
+// );
 
 
 
@@ -51,18 +51,21 @@ export const AuthSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.isLoggedin = false;
+      localStorage.removeItem("user");
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.fulfilled, (state, { payload }) => {
-        console.log(payload, "REDUCE PAY");
+        // console.log(payload, "REDUCE PAY");
         state.isLoggedin = true;
         state.user = payload?.user;
       })
-      .addCase(registerUser.fulfilled, (state, { payload }) => {
-        // console.log(payload, "REGISTER PAY");
-      });
+      // .addCase(logoutUser.fulfilled, (state, { payload }) => {
+      //   console.log(payload, "LOGOUT PAY");
+      //   state.user = null;
+      //   state.isLoggedin = false;
+      // });
   },
 });
 
