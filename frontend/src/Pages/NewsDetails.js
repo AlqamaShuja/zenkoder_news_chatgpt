@@ -56,7 +56,7 @@ const NewsDetails = () => {
         dispatch(getNewsUsingThunk())
     }, []);
 
-    console.log(summarizedtext, "summarizedtext");
+    // console.log(summarizedtext, "summarizedtext");
 
     return (
         <div>
